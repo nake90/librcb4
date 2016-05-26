@@ -1,0 +1,33 @@
+librcb4
+
+Open source library to control a RCB4-powered robot (like Kondo's KHR-3) from
+linux. It has been created using only the official reference manual so it's 100%
+free software.
+
+To build simply use `make`. Once compiled link your program using like:
+`gcc -L/path/to/librcb4/lib -lrcb4 -o my_program my_source.c`
+The only header you have to include from your program is rcb4.h.
+
+Check the samples folder for some examples using the library. You can also build
+the doxygen documentation executing `make docs` and then read it in your web
+browser by opening the file index.html in the doc folder.
+
+You will need a compatible USB to serial adapter connected to the robot. Kondo's
+USB to Serial Adapter HS is recommended, but you can use anything that outputs
+5V CMOS inverted logic at a speed ranging from 115200bps to 1.25Mbps.
+The serial uses 8 data bits, 1 stop bit and even parity.
+
+Also, remember that you need to have permission to read and write into the
+device. Usually it's /dev/ttyUSB0, so you can just type ls -al /dev/ttyUSB0 and
+see the permissions. You can create an udev rule or just add your user to the
+dialout group by issuing as root the following command:
+usermod -a G dialout username
+You'll have to log out and log in again for the command to take effect.
+
+AUTHOR
+Alfonso Arbona Gimeno, alargi[.at.]etsii.upv.es, alf[.at.]katolab.nitech.ac.jp
+Oct-Nov 2015. Nagoya Institute of Technology.
+
+LICENSE
+This library is free software (GPLv3) read the file COPYING for a full copy of
+the license file.
