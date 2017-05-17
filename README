@@ -5,7 +5,7 @@ linux. It has been created using only the official reference manual so it's 100%
 free software.
 
 To build simply use `make`. Once compiled link your program using like:
-`gcc -L/path/to/librcb4/lib -lrcb4 -o my_program my_source.c`
+`gcc -L/path/to/librcb4/lib -o my_program my_source.c -lrcb4`
 The only header you have to include from your program is rcb4.h.
 
 Check the samples folder for some examples using the library. You can also build
